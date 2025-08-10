@@ -1,0 +1,51 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🧠 Multimodal Deepfake Detector</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <h1>🔍 Multimodal Deepfake Detection</h1>
+    <p>
+      Upload a <strong>video</strong>, speak or type something — our AI will detect deepfakes<br>
+      using advanced <span style="color:#00ffff">Voice</span>, <span style="color:#00ffff">Text</span>, <span style="color:#00ffff">Visual</span> and <span style="color:#00ffff">LLM/NLP</span> models.
+    </p>
+
+    <form method="POST" enctype="multipart/form-data">
+      <label class="custom-file-upload">
+        <input type="file" name="video">
+        🎥 Upload Video
+      </label>
+
+      <label class="custom-file-upload">
+        <input type="file" name="voice">
+        🎙️ Upload Voice
+      </label>
+
+      <textarea name="text" placeholder="✍️ Or type some content here..." rows="5" style="width:100%; padding:10px; border-radius:10px; font-size:1rem;"></textarea>
+
+      <button type="submit">🚀 Detect Deepfake</button>
+    </form>
+
+    {% if result %}
+      <div class="result-box" style="margin-top:30px; padding:20px; background:#111; border-radius:10px;">
+        <h2>🧠 AI Verdict:</h2>
+        <p><strong>Result:</strong> {{ result.label }}</p>
+        <p><strong>Confidence:</strong> {{ result.final_score }}</p>
+        <p><strong>Summary:</strong> {{ result.summary }}</p>
+        <p><strong>Fluency Check:</strong> {{ result.fluency_check }}</p>
+        <p><strong>Sentiment:</strong> {{ result.sentiment }}</p>
+      </div>
+    {% endif %}
+
+    <div class="footer">
+      <p>Powered by Whisper, CLIP, GPT, HuggingFace ✨ | Designed by Sankalp</p>
+    </div>
+  </div>
+</body>
+</html>
