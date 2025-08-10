@@ -1,6 +1,6 @@
 # Multimodal Deepfake Detection
 
-![Project Banner](<!"C:\Users\hp pc\Pictures\Screenshots\Screenshot (654).png")  <!-- Agar koi banner hai to -->
+![Project Banner]("C:\Users\hp pc\Pictures\Screenshots\Screenshot (654).png")  <!-- Agar koi banner hai to -->
 
 ---
 
