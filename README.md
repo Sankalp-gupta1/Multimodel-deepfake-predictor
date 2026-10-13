@@ -1,4 +1,30 @@
-# Multimodal Deepfake Predictor
+# Multimodal Deepfake Research Prototype
+
+## Live app
+
+**https://multimodal-deepfake-demo.vercel.app/**
+
+The public hosted mode is intentionally conservative.
+
+Instead of making an unsupported deepfake verdict, it lets a reviewer upload image/audio/video media and inspect:
+- MIME type,
+- file size,
+- duration,
+- image/video dimensions,
+- basic container and payload consistency checks.
+
+The repository's original local prototype still contains the heavyweight video/audio/text model pipeline.
+
+The hosted report is an **integrity/metadata demo only**. It cannot establish whether a file is authentic or manipulated.
+
+### Run locally
+
+```bash
+cd web
+python -m http.server 8000
+```
+
+---
 
 A research-oriented Flask prototype that combines **video, audio, text, NLP, and language-model signals** into a single multimodal deepfake-style assessment.
 
